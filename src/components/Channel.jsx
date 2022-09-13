@@ -2,6 +2,7 @@ import { collection, limit, orderBy, query } from "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
 import Form from "./Form";
 import Messages from "./Messages";
+import {CircularProgress} from "@mui/material";
 
 export default function Channel() {
   const firestore = useFirestore();
@@ -19,7 +20,7 @@ export default function Channel() {
   return (
     <div>
       {status === "loading" ? (
-        <span>loading...</span>
+        <CircularProgress/>
       ) : (
         <Messages messages={messages} />
       )}

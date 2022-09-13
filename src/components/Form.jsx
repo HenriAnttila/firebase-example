@@ -1,6 +1,7 @@
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { useUser } from "reactfire";
+import {Button, TextField} from "@mui/material";
 
 export default function Form({ messagesCollection }) {
   const [newMessage, setNewMessage] = useState("");
@@ -32,12 +33,17 @@ export default function Form({ messagesCollection }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        value={newMessage}
-        onChange={handleChange}
-        placeholder="Type your message here..."
+      <TextField
+          label="Message"
+          size="small"
+          value={newMessage}
+          onChange={handleChange}
+          style={{ "padding-right": 5 }}
       />
-      <button disabled={!newMessage}>Send</button>
+      {newMessage ?
+          <Button type="submit" variant="contained">Send</Button> :
+          <Button disabled variant="contained">Send</Button>
+      }
     </form>
   );
 }
