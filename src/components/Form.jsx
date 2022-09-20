@@ -38,7 +38,7 @@ export default function Form({ messagesCollection }) {
           size="small"
           value={newMessage}
           onChange={handleChange}
-          style={{ "padding-right": 5 }}
+          style={{ marginRight: 5 }}
       />
       {newMessage ?
           <Button type="submit" variant="contained">Send</Button> :

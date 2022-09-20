@@ -1,4 +1,4 @@
-import {Chip} from "@mui/material";
+import {Chip, Typography} from "@mui/material";
 
 const dateTimeFormat = new Intl.DateTimeFormat("en-GB", {
   hour: "numeric",
@@ -13,8 +13,14 @@ export default function Message({ createdAt, text, displayName }) {
     createdAt = dateTimeFormat.format(new Date(createdAt.seconds * 1000));
 
     return (
-      <div style={{ "padding-bottom": 2 }}>
-          <Chip color="primary" label={`(${createdAt}) ${displayName}: ${text}`}/>
-      </div>
-  );
+        <Chip
+            sx={{marginBottom: 1, marginLeft: 1 }}
+
+            color="primary"
+            label={<Typography style={{whiteSpace: 'normal'}}>
+                {createdAt} {displayName}: {text}
+            </Typography>}
+            style={{height: "100%"}}
+        />
+  )
 }
