@@ -1,7 +1,7 @@
 import { collection, limit, orderBy, query } from "firebase/firestore";
 import { useFirestore, useFirestoreCollectionData } from "reactfire";
 import Messages from "./Messages";
-import {CircularProgress} from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import MessageAppBar from "./MessageAppBar.jsx";
 
 export default function Channel() {

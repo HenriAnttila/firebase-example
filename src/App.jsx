@@ -1,9 +1,8 @@
 import { useSigninCheck } from "reactfire";
 import Channel from "./components/Channel";
-import {CircularProgress, CssBaseline, ThemeProvider} from "@mui/material";
+import { CircularProgress, CssBaseline, ThemeProvider } from "@mui/material";
 import TopAppBar from "./components/TopAppBar.jsx";
 import { createTheme } from '@mui/material/styles';
-import MessageAppBar from "./components/MessageAppBar.jsx";
 
 const siteTheme = createTheme({
   palette: {
